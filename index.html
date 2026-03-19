@@ -7,343 +7,226 @@
 
     <title>Shajar Hope Alliance</title>
 
-    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Flowbite -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 </head>
 
 <body class="bg-gray-50">
 
-    <!-- NAVBAR -->
-    <nav class="bg-white shadow-md">
-        <div class="max-w-screen-xl mx-auto flex items-center justify-between p-4">
+<!-- NAVBAR -->
+<nav class="bg-white shadow-md">
+    <div class="max-w-screen-xl mx-auto flex items-center justify-between p-4">
 
-            <div class="flex items-center space-x-2">
-                <img src="./img/hand.png.png" class="w-14" alt="logo">
-                <span class="text-xl font-bold text-green-700">Shajar Hope Alliance</span>
-            </div>
+        <div class="flex items-center space-x-2">
+            <img src="./img/hand.png.png" class="w-14" alt="logo">
+            <span class="text-xl font-bold text-green-700">Shajar Hope Alliance</span>
+        </div>
 
-            <ul class="flex space-x-6 font-medium">
-                <li><a href="index.html" class="hover:text-green-600">Home</a></li>
-                <li><a href="src/pages/about/about.html" class="hover:text-green-600">About</a></li>
-                <li><a href="src/pages/contact/contact.html" class="hover:text-green-600">Contact</a></li>
-            </ul>
+        <ul class="flex space-x-6 font-medium">
+            <li><a href="index.html" class="hover:text-green-600">Home</a></li>
+            <li><a href="#" class="hover:text-green-600">About</a></li>
+            <li><a href="#" class="hover:text-green-600">Contact</a></li>
+        </ul>
 
-            <div class="space-x-3">
-                <a href="signin.html" class="text-gray-700 hover:text-green-600">Sign In</a>
-                <a href="signup.html" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">Sign Up</a>
-            </div>
+        <div class="space-x-3">
+            <a href="#" class="text-gray-700 hover:text-green-600">Sign In</a>
+            <a href="#" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">Sign Up</a>
+        </div>
+
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="bg-white py-20">
+    <div class="max-w-screen-xl mx-auto grid md:grid-cols-2 items-center gap-10 px-6">
+
+        <div>
+            <h1 class="text-5xl font-bold">Empowering Her <span class="text-green-600">Bright Future</span></h1>
+            <p class="text-gray-600 mt-4">A centralized platform connecting donors with students.</p>
+        </div>
+
+        <div class="flex justify-center">
+            <img src="./img/logo.png.png" class="w-60">
+        </div>
+
+    </div>
+</section>
+
+<!-- SEARCH + FILTER -->
+<section class="py-10 bg-white">
+
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+
+        <input id="searchInput" onkeyup="searchCampaigns()"
+            class="w-full md:w-1/2 border p-2 rounded mb-4"
+            placeholder="Search..." />
+
+        <div class="space-x-2 space-y-2">
+
+            <button onclick="filterCampaign('all')" class="bg-gray-500 text-white px-3 py-1 rounded">All</button>
+            <button onclick="filterCampaign('multan')" class="bg-green-600 text-white px-3 py-1 rounded">Multan</button>
+            <button onclick="filterCampaign('lahore')" class="bg-blue-600 text-white px-3 py-1 rounded">Lahore</button>
+            <button onclick="filterCampaign('karachi')" class="bg-red-600 text-white px-3 py-1 rounded">Karachi</button>
 
         </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <section class="bg-white py-20">
-
-        <div class="max-w-screen-xl mx-auto grid md:grid-cols-2 items-center gap-10 px-6">
-
-            <div>
-                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
-                    Applications Open 2026
-                </span>
-
-                <h1 class="text-5xl font-bold mt-4">
-                    Empowering Her <span class="text-green-600">Bright Future</span>
-                </h1>
-
-                <p class="text-gray-600 mt-4">
-                    A centralized platform connecting donors with students in need of educational financial support.
-                </p>
-
-                <div class="mt-6 space-y-4 sm:space-y-0 sm:space-x-4 flex flex-col sm:flex-row">
-
-                    <a href="signup.html"
-                        class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 w-full sm:w-auto text-center block sm:inline-block">
-                        Apply for Aid
-                    </a>
-
-                    <a href="./src/pages/contact/contact.html"
-                        class="border px-6 py-3 rounded-lg hover:bg-gray-100 w-full sm:w-auto text-center block sm:inline-block">
-                        Support Us
-                    </a>
-
-                </div>
-            </div>
-
-            <div class="flex justify-center">
-                <img src="./img/logo.png.png" class="w-60">
-            </div>
-
-        </div>
-    </section>
-
-    <!-- OUR MISSION -->
-    <section class="py-20">
-
-        <h2 class="text-center text-3xl font-bold mb-12">Our Mission</h2>
-
-        <div class="max-w-screen-xl mx-auto grid md:grid-cols-4 gap-8 px-6">
-
-            <div class="bg-white shadow-md p-6 rounded-lg text-center">
-                <h3 class="font-semibold text-lg">Education Access</h3>
-                <p class="text-gray-600 mt-2">Helping students access education through scholarships.</p>
-            </div>
-
-            <div class="bg-white shadow-md p-6 rounded-lg text-center">
-                <h3 class="font-semibold text-lg">Donor Network</h3>
-                <p class="text-gray-600 mt-2">Connecting donors with students in need.</p>
-            </div>
-
-            <div class="bg-white shadow-md p-6 rounded-lg text-center">
-                <h3 class="font-semibold text-lg">Transparency</h3>
-                <p class="text-gray-600 mt-2">Ensuring fair distribution of financial aid.</p>
-            </div>
-
-            <div class="bg-white shadow-md p-6 rounded-lg text-center">
-                <h3 class="font-semibold text-lg">Community Growth</h3>
-                <p class="text-gray-600 mt-2">Building a supportive global community.</p>
-            </div>
-
-        </div>
-    </section>
-    <section class="py-10 bg-white">
-
-  <div class="max-w-screen-xl mx-auto px-6 text-center">
-
-    <h2 class="text-2xl font-bold mb-4">Search Campaigns</h2>
-
-    <input
-      type="text"
-      id="searchInput"
-      onkeyup="searchCampaigns()"
-      placeholder="Search by title or location..."
-      class="w-full md:w-1/2 border p-2 rounded mb-4"
-    />
-
-    <div class="space-x-2 space-y-2">
-
-      <button onclick="filterCampaign('all')" class="bg-gray-500 text-white px-3 py-1 rounded">All</button>
-      <button onclick="filterCampaign('multan')" class="bg-green-600 text-white px-3 py-1 rounded">Multan</button>
-      <button onclick="filterCampaign('lahore')" class="bg-blue-600 text-white px-3 py-1 rounded">Lahore</button>
-      <button onclick="filterCampaign('karachi')" class="bg-red-600 text-white px-3 py-1 rounded">Karachi</button>
-      <button onclick="filterCampaign('high')" class="bg-purple-600 text-white px-3 py-1 rounded">High Budget</button>
 
     </div>
 
-  </div>
+</section>
+
+<!-- CAMPAIGNS -->
+<section class="py-20 bg-gray-50">
+
+    <h2 class="text-center text-3xl font-bold mb-10">Active Campaigns</h2>
+
+    <div id="campaignContainer" class="max-w-screen-xl mx-auto grid md:grid-cols-3 gap-6 px-6"></div>
 
 </section>
 
-    <!-- CAMPAIGNS SECTION (FIXED) -->
-    
-    <section class="py-20 bg-gray-50">
+<!-- FOR LOOP -->
+<div class="max-w-screen-xl mx-auto px-6 mt-10">
+    <h2 class="text-2xl font-bold mb-4">For Loop Output</h2>
+    <button onclick="renderItems()" class="bg-green-600 text-white px-4 py-2 rounded mb-4">Show Items</button>
+    <div id="loopOutput"></div>
+</div>
 
-        <h2 class="text-center text-3xl font-bold mb-10">
-            Active Campaigns
-        </h2>
+<!-- WHILE LOOP -->
+<div class="max-w-screen-xl mx-auto px-6 mt-10">
+    <h2 class="text-2xl font-bold mb-4">While Loop Output</h2>
+    <button onclick="runWhileLoop()" class="bg-blue-600 text-white px-4 py-2 rounded mb-4">Run While Loop</button>
+    <div id="whileOutput"></div>
+</div>
 
-        <div id="campaignContainer" class="max-w-screen-xl mx-auto grid md:grid-cols-3 gap-6 px-6">
-        </div>
+<!-- LOOP + CONDITIONS -->
+<div class="max-w-screen-xl mx-auto px-6 mt-10">
+    <h2 class="text-2xl font-bold mb-4">Loop + Conditions Output</h2>
+    <button onclick="runConditionalLoop()" class="bg-purple-600 text-white px-4 py-2 rounded mb-4">Run Analysis</button>
+    <div id="conditionalOutput"></div>
+</div>
 
-    </section>
+<!-- OUTPUT BOX (IF ELSE) -->
+<div class="max-w-screen-xl mx-auto px-6 mt-10">
+    <h2 class="text-xl font-bold mb-3">System Messages</h2>
+    <div id="outputBox" class="bg-white p-4 rounded shadow text-sm space-y-2"></div>
+</div>
 
-    <!-- HOW IT WORKS -->
-    <section class="bg-white py-20">
+<!-- FOOTER (FIXED ORIGINAL STYLE) -->
+<footer class="bg-green-900 text-white py-10 mt-10">
+    <div class="max-w-screen-xl mx-auto text-center">
+        <h3 class="text-xl font-bold">Shajar Hope Alliance</h3>
+        <p class="text-gray-400 mt-2">Empowering education through generosity.</p>
+        <p class="text-gray-500 mt-4 text-sm">© 2026 Shajar Hope Alliance</p>
+    </div>
+</footer>
 
-        <h2 class="text-center text-3xl font-bold mb-12">How It Works</h2>
-
-        <div class="max-w-screen-xl mx-auto grid md:grid-cols-3 gap-8 px-6">
-
-            <div class="text-center">
-                <h3 class="font-semibold text-xl">1. Apply</h3>
-                <p class="text-gray-600 mt-2">Students submit their scholarship applications.</p>
-            </div>
-
-            <div class="text-center">
-                <h3 class="font-semibold text-xl">2. Review</h3>
-                <p class="text-gray-600 mt-2">Applications are reviewed and verified.</p>
-            </div>
-
-            <div class="text-center">
-                <h3 class="font-semibold text-xl">3. Support</h3>
-                <p class="text-gray-600 mt-2">Donors fund the selected students.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-green-900 text-white py-10 mt-10">
-
-        <div class="max-w-screen-xl mx-auto text-center">
-
-            <h3 class="text-xl font-bold">Shajar Hope Alliance</h3>
-            <p class="text-gray-400 mt-2">Empowering education through generosity.</p>
-            <p class="text-gray-500 mt-4 text-sm">© 2026 Shajar Hope Alliance</p>
-
-        </div>
-
-    </footer>
-
-    <!-- SCRIPTS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+<!-- SCRIPTS -->
 <script>
+
 let campaigns = [
-  { id: 1, title: "Food Distribution Drive", location: "Multan", goal: 50000, collected: 32000 },
-  { id: 2, title: "Free Education Program", location: "Lahore", goal: 100000, collected: 75000 },
-  { id: 3, title: "Medical Camp", location: "Karachi", goal: 70000, collected: 45000 }
+    { id: 1, title: "Food Drive", location: "Multan", goal: 50000, collected: 32000 },
+    { id: 2, title: "Education Program", location: "Lahore", goal: 100000, collected: 75000 },
+    { id: 3, title: "Medical Camp", location: "Karachi", goal: 70000, collected: 45000 }
 ];
 
-const container = document.getElementById("campaignContainer");
-
-let editId = null;
+let items = ["Education", "Food Aid", "Medical Help", "Water Project"];
 
 // RENDER
 function renderCampaigns(data = campaigns) {
-  container.innerHTML = "";
+    let container = document.getElementById("campaignContainer");
+    container.innerHTML = "";
 
-  data.forEach(campaign => {
-    container.innerHTML += `
-      <div class="bg-white shadow-md rounded-lg p-6">
-
-        <h3 class="text-xl font-bold text-green-700">${campaign.title}</h3>
-        <p>📍 ${campaign.location}</p>
-        <p>🎯 Goal: Rs ${campaign.goal}</p>
-        <p>💰 Collected: Rs ${campaign.collected}</p>
-
-        <div class="space-x-2 mt-4">
-
-          <button onclick="openEdit(${campaign.id})"
-            class="bg-blue-600 text-white px-3 py-1 rounded">
-            Edit
-          </button>
-
-          <button onclick="deleteCampaign(${campaign.id})"
-            class="bg-red-600 text-white px-3 py-1 rounded">
-            Delete
-          </button>
-
-        </div>
-
-      </div>
-    `;
-  });
-}
-
-// DELETE
-function deleteCampaign(id) {
-  campaigns = campaigns.filter(c => c.id !== id);
-  renderCampaigns();
-}
-
-// OPEN EDIT
-function openEdit(id) {
-  const c = campaigns.find(c => c.id === id);
-  editId = id;
-
-  document.getElementById("editTitle").value = c.title;
-  document.getElementById("editLocation").value = c.location;
-  document.getElementById("editGoal").value = c.goal;
-  document.getElementById("editCollected").value = c.collected;
-
-  document.getElementById("editModal").classList.remove("hidden");
-}
-
-// CLOSE MODAL
-function closeModal() {
-  document.getElementById("editModal").classList.add("hidden");
-}
-
-// UPDATE
-function updateCampaign() {
-  campaigns = campaigns.map(c => {
-    if (c.id === editId) {
-      return {
-        ...c,
-        title: document.getElementById("editTitle").value,
-        location: document.getElementById("editLocation").value,
-        goal: Number(document.getElementById("editGoal").value),
-        collected: Number(document.getElementById("editCollected").value)
-      };
-    }
-    return c;
-  });
-
-  closeModal();
-  renderCampaigns();
+    data.forEach(c => {
+        container.innerHTML += `
+        <div class="bg-white p-6 shadow rounded">
+            <h3 class="font-bold text-green-700">${c.title}</h3>
+            <p>${c.location}</p>
+            <p>Goal: ${c.goal}</p>
+            <p>Collected: ${c.collected}</p>
+        </div>`;
+    });
 }
 
 // SEARCH
 function searchCampaigns() {
-  const val = document.getElementById("searchInput").value.toLowerCase();
+    let val = document.getElementById("searchInput").value.toLowerCase();
 
-  const filtered = campaigns.filter(c =>
-    c.title.toLowerCase().includes(val) ||
-    c.location.toLowerCase().includes(val)
-  );
+    let filtered = campaigns.filter(c =>
+        c.title.toLowerCase().includes(val) ||
+        c.location.toLowerCase().includes(val)
+    );
 
-  renderCampaigns(filtered);
+    renderCampaigns(filtered);
 }
 
 // FILTER
 function filterCampaign(type) {
+    let filtered = campaigns;
 
-  let filtered = [];
+    if (type === "multan") filtered = campaigns.filter(c => c.location === "Multan");
+    else if (type === "lahore") filtered = campaigns.filter(c => c.location === "Lahore");
+    else if (type === "karachi") filtered = campaigns.filter(c => c.location === "Karachi");
 
-  switch(type) {
-    case "multan":
-      filtered = campaigns.filter(c => c.location.toLowerCase() === "multan");
-      break;
+    renderCampaigns(filtered);
+}
 
-    case "lahore":
-      filtered = campaigns.filter(c => c.location.toLowerCase() === "lahore");
-      break;
+// FOR LOOP
+function renderItems() {
+    let box = document.getElementById("loopOutput");
+    box.innerHTML = "";
 
-    case "karachi":
-      filtered = campaigns.filter(c => c.location.toLowerCase() === "karachi");
-      break;
+    for (let i = 0; i < items.length; i++) {
+        box.innerHTML += `<div class="bg-white p-2 mb-2 shadow rounded">${items[i]}</div>`;
+    }
+}
 
-    case "high":
-      filtered = campaigns.filter(c => c.goal >= 80000);
-      break;
+// WHILE LOOP
+function runWhileLoop() {
+    let box = document.getElementById("whileOutput");
+    box.innerHTML = "";
 
-    default:
-      filtered = campaigns;
-  }
+    let i = 0;
 
-  renderCampaigns(filtered);
+    while (i < campaigns.length) {
+        box.innerHTML += `
+        <div class="bg-white p-3 mb-2 shadow rounded">
+            ${campaigns[i].title} - ${campaigns[i].location}
+        </div>`;
+        i++;
+    }
+}
+
+// LOOP + CONDITIONS
+function runConditionalLoop() {
+    let box = document.getElementById("conditionalOutput");
+    box.innerHTML = "";
+
+    for (let i = 0; i < campaigns.length; i++) {
+
+        let c = campaigns[i];
+        let status = "";
+
+        if (c.collected >= c.goal) {
+            status = "Fully Funded 🎉";
+        } else if (c.collected >= c.goal / 2) {
+            status = "Half Funded ⚡";
+        } else {
+            status = "Needs Funding ❌";
+        }
+
+        box.innerHTML += `
+        <div class="bg-white p-3 mb-2 shadow rounded">
+            ${c.title} - ${status}
+        </div>`;
+    }
 }
 
 // INIT
-renderCampaigns();
+window.onload = function () {
+    renderCampaigns();
+    runConditionalLoop();
+};
+
 </script>
-<div id="editModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
 
-  <div class="bg-white p-6 rounded-lg w-96">
-
-    <h2 class="text-xl font-bold mb-4">Edit Campaign</h2>
-
-    <input id="editTitle" class="w-full border p-2 mb-2" placeholder="Title">
-    <input id="editLocation" class="w-full border p-2 mb-2" placeholder="Location">
-    <input id="editGoal" type="number" class="w-full border p-2 mb-2" placeholder="Goal">
-    <input id="editCollected" type="number" class="w-full border p-2 mb-4" placeholder="Collected">
-
-    <div class="flex justify-between">
-
-      <button onclick="updateCampaign()" class="bg-green-600 text-white px-4 py-2 rounded">
-        Update
-      </button>
-
-      <button onclick="closeModal()" class="bg-gray-500 text-white px-4 py-2 rounded">
-        Cancel
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
 </body>
 </html>
