@@ -161,26 +161,7 @@
 
     <!-- SCRIPTS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-<section class="py-10 bg-white">
-  <div class="max-w-xl mx-auto p-6 shadow-md rounded-lg">
-
-    <h2 class="text-2xl font-bold mb-4 text-center">Add New Campaign</h2>
-
-    <input id="title" class="w-full border p-2 mb-3" placeholder="Campaign Title">
-
-    <input id="location" class="w-full border p-2 mb-3" placeholder="Location">
-
-    <input id="goal" type="number" class="w-full border p-2 mb-3" placeholder="Goal Amount">
-
-    <input id="collected" type="number" class="w-full border p-2 mb-3" placeholder="Collected Amount">
-
-    <button onclick="addCampaign()" class="bg-green-600 text-white px-4 py-2 w-full rounded">
-      Add Campaign
-    </button>
-
-  </div>
-</section>
-    <script>
+<script>
 let campaigns = [
   { id: 1, title: "Food Distribution Drive", location: "Multan", goal: 50000, collected: 32000 },
   { id: 2, title: "Free Education Program", location: "Lahore", goal: 100000, collected: 75000 },
@@ -189,50 +170,34 @@ let campaigns = [
 
 const container = document.getElementById("campaignContainer");
 
-// function to display cards
 function renderCampaigns() {
   container.innerHTML = "";
 
   campaigns.forEach(campaign => {
     container.innerHTML += `
       <div class="bg-white shadow-md rounded-lg p-6">
+
         <h3 class="text-xl font-bold text-green-700">${campaign.title}</h3>
         <p>📍 ${campaign.location}</p>
         <p>🎯 Goal: Rs ${campaign.goal}</p>
         <p>💰 Collected: Rs ${campaign.collected}</p>
+
+        <button onclick="deleteCampaign(${campaign.id})"
+          class="mt-4 bg-red-600 text-white px-4 py-2 rounded">
+          Delete
+        </button>
+
       </div>
     `;
   });
 }
 
-// initial render
-renderCampaigns();
-
-// function to add new campaign
-function addCampaign() {
-  const title = document.getElementById("title").value;
-  const location = document.getElementById("location").value;
-  const goal = document.getElementById("goal").value;
-  const collected = document.getElementById("collected").value;
-
-  const newCampaign = {
-    id: campaigns.length + 1,
-    title,
-    location,
-    goal: Number(goal),
-    collected: Number(collected)
-  };
-
-  campaigns.push(newCampaign); // STEP 2 requirement
-
-  renderCampaigns(); // re-render updated list
-
-  // clear form
-  document.getElementById("title").value = "";
-  document.getElementById("location").value = "";
-  document.getElementById("goal").value = "";
-  document.getElementById("collected").value = "";
+function deleteCampaign(id) {
+  campaigns = campaigns.filter(c => c.id !== id);
+  renderCampaigns();
 }
+
+renderCampaigns();
 </script>
 
 </body>
