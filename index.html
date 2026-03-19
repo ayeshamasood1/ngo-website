@@ -108,8 +108,36 @@
 
         </div>
     </section>
+    <section class="py-10 bg-white">
+
+  <div class="max-w-screen-xl mx-auto px-6 text-center">
+
+    <h2 class="text-2xl font-bold mb-4">Search Campaigns</h2>
+
+    <input
+      type="text"
+      id="searchInput"
+      onkeyup="searchCampaigns()"
+      placeholder="Search by title or location..."
+      class="w-full md:w-1/2 border p-2 rounded mb-4"
+    />
+
+    <div class="space-x-2 space-y-2">
+
+      <button onclick="filterCampaign('all')" class="bg-gray-500 text-white px-3 py-1 rounded">All</button>
+      <button onclick="filterCampaign('multan')" class="bg-green-600 text-white px-3 py-1 rounded">Multan</button>
+      <button onclick="filterCampaign('lahore')" class="bg-blue-600 text-white px-3 py-1 rounded">Lahore</button>
+      <button onclick="filterCampaign('karachi')" class="bg-red-600 text-white px-3 py-1 rounded">Karachi</button>
+      <button onclick="filterCampaign('high')" class="bg-purple-600 text-white px-3 py-1 rounded">High Budget</button>
+
+    </div>
+
+  </div>
+
+</section>
 
     <!-- CAMPAIGNS SECTION (FIXED) -->
+    
     <section class="py-20 bg-gray-50">
 
         <h2 class="text-center text-3xl font-bold mb-10">
@@ -170,10 +198,13 @@ let campaigns = [
 
 const container = document.getElementById("campaignContainer");
 
-function renderCampaigns() {
+let editId = null;
+
+// RENDER
+function renderCampaigns(data = campaigns) {
   container.innerHTML = "";
 
-  campaigns.forEach(campaign => {
+  data.forEach(campaign => {
     container.innerHTML += `
       <div class="bg-white shadow-md rounded-lg p-6">
 
@@ -182,23 +213,137 @@ function renderCampaigns() {
         <p>🎯 Goal: Rs ${campaign.goal}</p>
         <p>💰 Collected: Rs ${campaign.collected}</p>
 
-        <button onclick="deleteCampaign(${campaign.id})"
-          class="mt-4 bg-red-600 text-white px-4 py-2 rounded">
-          Delete
-        </button>
+        <div class="space-x-2 mt-4">
+
+          <button onclick="openEdit(${campaign.id})"
+            class="bg-blue-600 text-white px-3 py-1 rounded">
+            Edit
+          </button>
+
+          <button onclick="deleteCampaign(${campaign.id})"
+            class="bg-red-600 text-white px-3 py-1 rounded">
+            Delete
+          </button>
+
+        </div>
 
       </div>
     `;
   });
 }
 
+// DELETE
 function deleteCampaign(id) {
   campaigns = campaigns.filter(c => c.id !== id);
   renderCampaigns();
 }
 
+// OPEN EDIT
+function openEdit(id) {
+  const c = campaigns.find(c => c.id === id);
+  editId = id;
+
+  document.getElementById("editTitle").value = c.title;
+  document.getElementById("editLocation").value = c.location;
+  document.getElementById("editGoal").value = c.goal;
+  document.getElementById("editCollected").value = c.collected;
+
+  document.getElementById("editModal").classList.remove("hidden");
+}
+
+// CLOSE MODAL
+function closeModal() {
+  document.getElementById("editModal").classList.add("hidden");
+}
+
+// UPDATE
+function updateCampaign() {
+  campaigns = campaigns.map(c => {
+    if (c.id === editId) {
+      return {
+        ...c,
+        title: document.getElementById("editTitle").value,
+        location: document.getElementById("editLocation").value,
+        goal: Number(document.getElementById("editGoal").value),
+        collected: Number(document.getElementById("editCollected").value)
+      };
+    }
+    return c;
+  });
+
+  closeModal();
+  renderCampaigns();
+}
+
+// SEARCH
+function searchCampaigns() {
+  const val = document.getElementById("searchInput").value.toLowerCase();
+
+  const filtered = campaigns.filter(c =>
+    c.title.toLowerCase().includes(val) ||
+    c.location.toLowerCase().includes(val)
+  );
+
+  renderCampaigns(filtered);
+}
+
+// FILTER
+function filterCampaign(type) {
+
+  let filtered = [];
+
+  switch(type) {
+    case "multan":
+      filtered = campaigns.filter(c => c.location.toLowerCase() === "multan");
+      break;
+
+    case "lahore":
+      filtered = campaigns.filter(c => c.location.toLowerCase() === "lahore");
+      break;
+
+    case "karachi":
+      filtered = campaigns.filter(c => c.location.toLowerCase() === "karachi");
+      break;
+
+    case "high":
+      filtered = campaigns.filter(c => c.goal >= 80000);
+      break;
+
+    default:
+      filtered = campaigns;
+  }
+
+  renderCampaigns(filtered);
+}
+
+// INIT
 renderCampaigns();
 </script>
+<div id="editModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
 
+  <div class="bg-white p-6 rounded-lg w-96">
+
+    <h2 class="text-xl font-bold mb-4">Edit Campaign</h2>
+
+    <input id="editTitle" class="w-full border p-2 mb-2" placeholder="Title">
+    <input id="editLocation" class="w-full border p-2 mb-2" placeholder="Location">
+    <input id="editGoal" type="number" class="w-full border p-2 mb-2" placeholder="Goal">
+    <input id="editCollected" type="number" class="w-full border p-2 mb-4" placeholder="Collected">
+
+    <div class="flex justify-between">
+
+      <button onclick="updateCampaign()" class="bg-green-600 text-white px-4 py-2 rounded">
+        Update
+      </button>
+
+      <button onclick="closeModal()" class="bg-gray-500 text-white px-4 py-2 rounded">
+        Cancel
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
 </body>
 </html>
