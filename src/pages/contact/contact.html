@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Shajar Hope Alliance</title>
+    <link rel="icon" href="../../../img/logo.png.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>* { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-screen-xl mx-auto flex items-center justify-between p-4">
+            <div class="flex items-center space-x-2">
+                <img src="../../../img/hand.png.png" class="w-12" alt="logo">
+                <span class="text-xl font-bold text-green-700 dark:text-green-400">Shajar Hope Alliance</span>
+            </div>
+            <ul class="hidden md:flex space-x-6 font-medium">
+                <li><a href="../../../index.html" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">Home</a></li>
+                <li><a href="../about/about.html" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">About</a></li>
+                <li><a href="contact.html" class="text-green-600 dark:text-green-400 font-bold">Contact</a></li>
+                <li><a href="../../../crud.html" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">Manage</a></li>
+            </ul>
+            <div class="flex items-center space-x-3">
+                <button id="themeToggleBtn" onclick="toggleTheme()" class="text-xl p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" title="Toggle Theme">🌙</button>
+                <a href="../../../signin.html" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">Sign In</a>
+                <a href="../../../signup.html" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors text-sm font-medium">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="bg-gradient-to-r from-green-600 to-emerald-700 dark:from-gray-800 dark:to-gray-900 py-16 text-white text-center transition-colors">
+        <h1 class="text-4xl font-extrabold">Get In Touch</h1>
+        <p class="mt-2 text-green-100 dark:text-gray-400 max-w-2xl mx-auto">Have questions or want to join our cause? Reach out through the form below.</p>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="py-16">
+        <div class="max-w-6xl mx-auto px-6 md:flex md:items-start md:gap-10">
+            <!-- Contact Form -->
+            <div class="flex-1 bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 transition-colors">
+                <h2 class="text-2xl font-bold text-green-700 dark:text-green-400 mb-6">Send us a Message</h2>
+                <form class="space-y-5">
+                    <div>
+                        <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Your Name</label>
+                        <input type="text" class="w-full p-2.5 border dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none" placeholder="John Doe" required>
+                    </div>
+                    <div>
+                        <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                        <input type="email" class="w-full p-2.5 border dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none" placeholder="john@example.com" required>
+                    </div>
+                    <div>
+                        <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Subject</label>
+                        <input type="text" class="w-full p-2.5 border dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none" placeholder="Subject" required>
+                    </div>
+                    <div>
+                        <label class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                        <textarea rows="4" class="w-full p-2.5 border dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none" placeholder="Your message..." required></textarea>
+                    </div>
+                    <button type="submit" class="bg-green-600 text-white px-6 py-2.5 rounded-lg hover:bg-green-700 transition-colors font-medium">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="flex-1 flex flex-col justify-start space-y-5 mt-10 md:mt-0">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl text-center border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all hover:-translate-y-1">
+                    <div class="text-3xl mb-2">📧</div>
+                    <h3 class="font-bold text-green-700 dark:text-green-400 text-lg">Email</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mt-1">info@shajarhope.org</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl text-center border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all hover:-translate-y-1">
+                    <div class="text-3xl mb-2">📞</div>
+                    <h3 class="font-bold text-green-700 dark:text-green-400 text-lg">Phone</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mt-1">+92 300 0000000</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl text-center border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all hover:-translate-y-1">
+                    <div class="text-3xl mb-2">📍</div>
+                    <h3 class="font-bold text-green-700 dark:text-green-400 text-lg">Address</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mt-1">Lahore, Pakistan</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl text-center border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all hover:-translate-y-1">
+                    <div class="text-3xl mb-2">🕐</div>
+                    <h3 class="font-bold text-green-700 dark:text-green-400 text-lg">Working Hours</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mt-1">Mon - Fri: 9 AM - 5 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-green-700 dark:bg-gray-900 text-white py-10 transition-colors duration-300">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-3">Shajar Hope Alliance</h3>
+                    <p class="text-green-100 dark:text-gray-400">Empowering education through generosity. Together we build a brighter future.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-3">Quick Links</h3>
+                    <ul class="space-y-2 text-green-100 dark:text-gray-400">
+                        <li><a href="../../../index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="../about/about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="../../../crud.html" class="hover:text-white transition-colors">Manage Campaigns</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-3">Contact Info</h3>
+                    <ul class="space-y-2 text-green-100 dark:text-gray-400">
+                        <li>📧 info@shajarhope.org</li>
+                        <li>📞 +92 300 0000000</li>
+                        <li>📍 Lahore, Pakistan</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-green-600 dark:border-gray-700 mt-8 pt-6 text-center text-green-100 dark:text-gray-500 text-sm">© 2026 Shajar Hope Alliance. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="../../../src/constants/themeConstants.js"></script>
+    <script src="../../../src/utils/themeUtils.js"></script>
+</body>
+</html>

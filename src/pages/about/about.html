@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Shajar Hope Alliance</title>
+    <link rel="icon" href="../../../img/logo.png.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>* { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-screen-xl mx-auto flex items-center justify-between p-4">
+            <div class="flex items-center space-x-2">
+                <img src="../../../img/hand.png.png" class="w-12" alt="logo">
+                <span class="text-xl font-bold text-green-700 dark:text-green-400">Shajar Hope Alliance</span>
+            </div>
+            <ul class="hidden md:flex space-x-6 font-medium">
+                <li><a href="../../../index.html" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">Home</a></li>
+                <li><a href="about.html" class="text-green-600 dark:text-green-400 font-bold">About</a></li>
+                <li><a href="../contact/contact.html" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">Contact</a></li>
+                <li><a href="../../../crud.html" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">Manage</a></li>
+            </ul>
+            <div class="flex items-center space-x-3">
+                <button id="themeToggleBtn" onclick="toggleTheme()" class="text-xl p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" title="Toggle Theme">🌙</button>
+                <a href="../../../signin.html" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">Sign In</a>
+                <a href="../../../signup.html" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors text-sm font-medium">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO BANNER -->
+    <section class="bg-gradient-to-r from-green-600 to-emerald-700 dark:from-gray-800 dark:to-gray-900 py-16 text-white text-center transition-colors">
+        <h1 class="text-4xl font-extrabold">About Us</h1>
+        <p class="mt-2 text-green-100 dark:text-gray-400 max-w-2xl mx-auto">Learn about our journey, mission, and the people behind Shajar Hope Alliance.</p>
+    </section>
+
+    <main class="max-w-screen-xl mx-auto p-6 space-y-16">
+
+        <!-- TIMELINE -->
+        <section>
+            <h2 class="text-3xl font-bold mb-6 text-green-700 dark:text-green-400">Our Journey</h2>
+            <div class="relative border-l-2 border-green-300 dark:border-green-700 ml-4">
+                <div class="mb-8 ml-6">
+                    <span class="bg-green-600 text-white rounded-full px-3 py-1 text-sm font-bold">2015</span>
+                    <p class="mt-2 text-gray-700 dark:text-gray-300">Founded our NGO with a mission to help underprivileged communities.</p>
+                </div>
+                <div class="mb-8 ml-6">
+                    <span class="bg-green-600 text-white rounded-full px-3 py-1 text-sm font-bold">2017</span>
+                    <p class="mt-2 text-gray-700 dark:text-gray-300">First community clean water project completed.</p>
+                </div>
+                <div class="mb-8 ml-6">
+                    <span class="bg-green-600 text-white rounded-full px-3 py-1 text-sm font-bold">2020</span>
+                    <p class="mt-2 text-gray-700 dark:text-gray-300">Expanded services to three new regions across Pakistan.</p>
+                </div>
+                <div class="mb-8 ml-6">
+                    <span class="bg-green-600 text-white rounded-full px-3 py-1 text-sm font-bold">2024</span>
+                    <p class="mt-2 text-gray-700 dark:text-gray-300">Launched digital campaign management platform.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section>
+            <h2 class="text-3xl font-bold mb-6 text-green-700 dark:text-green-400">What People Say</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 border border-gray-100 dark:border-gray-700 transition-colors hover:shadow-xl">
+                    <p class="italic text-gray-600 dark:text-gray-300">"Thanks to this NGO, I have completed my education and now I am helping others."</p>
+                    <p class="mt-4 font-bold text-green-600 dark:text-green-400">– Ali, Volunteer</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 border border-gray-100 dark:border-gray-700 transition-colors hover:shadow-xl">
+                    <p class="italic text-gray-600 dark:text-gray-300">"They helped me get proper schooling when I had no resources. Forever grateful!"</p>
+                    <p class="mt-4 font-bold text-green-600 dark:text-green-400">– Sara, Beneficiary</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ ACCORDION -->
+        <section>
+            <h2 class="text-3xl font-bold mb-6 text-green-700 dark:text-green-400">Frequently Asked Questions</h2>
+            <div class="space-y-3">
+                <div class="border dark:border-gray-700 rounded-xl overflow-hidden">
+                    <button class="w-full text-left p-4 font-bold bg-green-50 dark:bg-gray-800 hover:bg-green-100 dark:hover:bg-gray-700 focus:outline-none accordion-btn text-gray-800 dark:text-white transition-colors">
+                        How can I volunteer?
+                    </button>
+                    <div class="p-4 hidden accordion-content bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300">
+                        Fill out our contact form or join one of our upcoming community projects.
+                    </div>
+                </div>
+                <div class="border dark:border-gray-700 rounded-xl overflow-hidden">
+                    <button class="w-full text-left p-4 font-bold bg-green-50 dark:bg-gray-800 hover:bg-green-100 dark:hover:bg-gray-700 focus:outline-none accordion-btn text-gray-800 dark:text-white transition-colors">
+                        How can I donate?
+                    </button>
+                    <div class="p-4 hidden accordion-content bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300">
+                        Donations can be made via our secure online form or through direct bank transfer.
+                    </div>
+                </div>
+                <div class="border dark:border-gray-700 rounded-xl overflow-hidden">
+                    <button class="w-full text-left p-4 font-bold bg-green-50 dark:bg-gray-800 hover:bg-green-100 dark:hover:bg-gray-700 focus:outline-none accordion-btn text-gray-800 dark:text-white transition-colors">
+                        Where do you operate?
+                    </button>
+                    <div class="p-4 hidden accordion-content bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300">
+                        We currently operate across Multan, Lahore, and Karachi with plans for further expansion.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAM -->
+        <section>
+            <h2 class="text-3xl font-bold mb-6 text-green-700 dark:text-green-400">Meet Our Team</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 text-center border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="w-24 h-24 bg-green-100 dark:bg-green-900 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl">👩‍💼</div>
+                    <h3 class="font-bold text-lg text-gray-800 dark:text-white">Ayesha Masood</h3>
+                    <p class="text-green-600 dark:text-green-400">Founder & Director</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 text-center border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="w-24 h-24 bg-green-100 dark:bg-green-900 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl">👨‍💼</div>
+                    <h3 class="font-bold text-lg text-gray-800 dark:text-white">Nadir Latif Butt</h3>
+                    <p class="text-green-600 dark:text-green-400">Project Manager</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 text-center border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all hover:-translate-y-1">
+                    <div class="w-24 h-24 bg-green-100 dark:bg-green-900 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl">👩‍🏫</div>
+                    <h3 class="font-bold text-lg text-gray-800 dark:text-white">Iqra Tanveer</h3>
+                    <p class="text-green-600 dark:text-green-400">Community Coordinator</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATISTICS -->
+        <section>
+            <h2 class="text-3xl font-bold mb-6 text-green-700 dark:text-green-400">Our Impact</h2>
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div class="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl shadow-lg border border-green-200 dark:border-gray-600 transition-colors">
+                    <p class="text-5xl font-extrabold text-green-700 dark:text-green-400">1000+</p>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300 font-medium">Children Educated</p>
+                </div>
+                <div class="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl shadow-lg border border-green-200 dark:border-gray-600 transition-colors">
+                    <p class="text-5xl font-extrabold text-green-700 dark:text-green-400">50+</p>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300 font-medium">Projects Completed</p>
+                </div>
+                <div class="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl shadow-lg border border-green-200 dark:border-gray-600 transition-colors">
+                    <p class="text-5xl font-extrabold text-green-700 dark:text-green-400">200+</p>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300 font-medium">Volunteers Engaged</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-green-700 dark:bg-gray-900 text-white py-10 mt-10 transition-colors duration-300">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-3">Shajar Hope Alliance</h3>
+                    <p class="text-green-100 dark:text-gray-400">Empowering education through generosity. Together we build a brighter future.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-3">Quick Links</h3>
+                    <ul class="space-y-2 text-green-100 dark:text-gray-400">
+                        <li><a href="../../../index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="../contact/contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="../../../crud.html" class="hover:text-white transition-colors">Manage Campaigns</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-3">Contact Info</h3>
+                    <ul class="space-y-2 text-green-100 dark:text-gray-400">
+                        <li>📧 info@shajarhope.org</li>
+                        <li>📞 +92 300 0000000</li>
+                        <li>📍 Lahore, Pakistan</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-green-600 dark:border-gray-700 mt-8 pt-6 text-center text-green-100 dark:text-gray-500 text-sm">© 2026 Shajar Hope Alliance. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- Accordion JS -->
+    <script src="../../../src/constants/themeConstants.js"></script>
+    <script src="../../../src/utils/themeUtils.js"></script>
+    <script>
+        const buttons = document.querySelectorAll('.accordion-btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                content.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

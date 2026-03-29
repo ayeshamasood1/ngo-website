@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shajar Hope Alliance - Empowering education through generosity. Support campaigns for food, education, healthcare and more.">
+    <title>Shajar Hope Alliance</title>
+    <link rel="icon" href="./img/logo.png.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>* { font-family: 'Inter', sans-serif; } html { scroll-behavior: smooth; }</style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
+    <!-- NAVBAR -->
+    <nav class="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-screen-xl mx-auto flex items-center justify-between p-4">
+            <div class="flex items-center space-x-2">
+                <img src="./img/hand.png.png" class="w-12" alt="Shajar Hope Alliance Logo">
+                <span class="text-xl font-bold text-green-700 dark:text-green-400">Shajar Hope Alliance</span>
+            </div>
+            <ul class="hidden md:flex space-x-6 font-medium">
+                <li><a href="index.html" class="text-green-600 dark:text-green-400 font-bold">Home</a></li>
+                <li><a href="./src/pages/about/about.html" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">About</a></li>
+                <li><a href="./src/pages/contact/contact.html" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">Contact</a></li>
+                <li><a href="crud.html" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">Manage</a></li>
+            </ul>
+            <div class="flex items-center space-x-3">
+                <button id="themeToggleBtn" onclick="toggleTheme()" class="text-xl p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" title="Toggle Theme">🌙</button>
+                <a href="signin.html" class="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 transition-colors">Sign In</a>
+                <a href="signup.html" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors text-sm font-medium">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+    <!-- HERO -->
+    <section class="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-900 dark:to-gray-800 py-20 transition-colors duration-300">
+        <div class="max-w-screen-xl mx-auto grid md:grid-cols-2 items-center gap-10 px-6">
+            <div>
+                <span class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-sm px-4 py-1 rounded-full font-medium">🌱 Making a Difference</span>
+                <h1 class="text-5xl font-extrabold mt-4 text-gray-900 dark:text-white leading-tight">Empowering Her <span class="text-green-600 dark:text-green-400">Bright Future</span></h1>
+                <p class="text-gray-600 dark:text-gray-400 mt-4 text-lg">A centralized platform connecting donors with students. Support education, healthcare, and community development across Pakistan.</p>
+                <div class="mt-6 flex gap-3">
+                    <a href="crud.html" class="bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition-colors font-medium">Start a Campaign</a>
+                    <a href="./src/pages/about/about.html" class="border-2 border-green-600 text-green-700 dark:text-green-400 px-6 py-3 rounded-xl hover:bg-green-50 dark:hover:bg-gray-800 transition-colors font-medium">Learn More</a>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <img src="./img/logo.png.png" class="w-64 drop-shadow-2xl" alt="Shajar Hope Alliance Logo">
+            </div>
+        </div>
+    </section>
+    <!-- SEARCH + FILTER -->
+    <section class="py-10 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <h2 class="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-white">Explore Campaigns</h2>
+            <input id="searchInput" oninput="applyHomeFilters()" class="w-full md:w-1/2 mx-auto block border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-800 dark:text-white p-3 rounded-xl mb-6 focus:ring-2 focus:ring-green-400 focus:outline-none transition-colors" placeholder="🔍 Search by name, location, or category...">
+            <div class="flex flex-wrap justify-center gap-2 mb-4">
+                <button onclick="applyHomeFilters('all')" data-filter="all" class="filter-btn bg-green-600 text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-green-700 transition-all">All</button>
+                <button onclick="applyHomeFilters('multan')" data-filter="multan" class="filter-btn bg-green-600 text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-green-700 transition-all">📍 Multan</button>
+                <button onclick="applyHomeFilters('lahore')" data-filter="lahore" class="filter-btn bg-green-600 text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-green-700 transition-all">📍 Lahore</button>
+                <button onclick="applyHomeFilters('karachi')" data-filter="karachi" class="filter-btn bg-green-600 text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-green-700 transition-all">📍 Karachi</button>
+                <button onclick="applyHomeFilters('high')" data-filter="high" class="filter-btn bg-green-600 text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-green-700 transition-all">⬆ High Goal</button>
+                <button onclick="applyHomeFilters('low')" data-filter="low" class="filter-btn bg-green-600 text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-green-700 transition-all">⬇ Low Goal</button>
+                <button onclick="applyHomeFilters('funded')" data-filter="funded" class="filter-btn bg-green-600 text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-green-700 transition-all">✅ Fully Funded</button>
+                <button onclick="applyHomeFilters('half')" data-filter="half" class="filter-btn bg-green-600 text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-green-700 transition-all">🔄 Half Funded</button>
+                <button onclick="applyHomeFilters('sort_goal')" data-filter="sort_goal" class="filter-btn bg-green-600 text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-green-700 transition-all">📊 Sort by Goal</button>
+                <button onclick="applyHomeFilters('top_rated')" data-filter="top_rated" class="filter-btn bg-green-600 text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-green-700 transition-all">⭐ Top Rated</button>
+                <button onclick="applyHomeFilters('recent')" data-filter="recent" class="filter-btn bg-green-600 text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-green-700 transition-all">🕐 Recently Added</button>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2">
+                <button onclick="showTotalFunds()" class="bg-green-600 text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-green-700 transition-all">💰 Total Funds</button>
+                <button onclick="showFindCampaign()" class="bg-green-600 text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-green-700 transition-all">🔍 Find Campaign</button>
+                <button onclick="showCheckStatus()" class="bg-green-600 text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-green-700 transition-all">📊 Check Status</button>
+            </div>
+        </div>
+    </section>
+    <!-- CAMPAIGNS GRID -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
+        <h2 class="text-center text-3xl font-bold mb-10 text-gray-800 dark:text-white">Active Campaigns</h2>
+        <div id="campaignContainer" class="max-w-screen-xl mx-auto grid md:grid-cols-3 gap-6 px-6"></div>
+    </section>
+    <!-- OUTPUT BOX -->
+    <div class="max-w-screen-xl mx-auto px-6 mb-10">
+        <h2 class="text-xl font-bold mb-3 text-gray-800 dark:text-white">System Messages</h2>
+        <div id="outputBox" class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 text-sm text-gray-600 dark:text-gray-300 transition-colors">Click a button above to see results here.</div>
+    </div>
+    <!-- FOOTER -->
+    <footer class="bg-green-700 dark:bg-gray-900 text-white py-10 transition-colors duration-300">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-3">Shajar Hope Alliance</h3>
+                    <p class="text-green-100 dark:text-gray-400">Empowering education through generosity. Together we build a brighter future.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-3">Quick Links</h3>
+                    <ul class="space-y-2 text-green-100 dark:text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="./src/pages/about/about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="./src/pages/contact/contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="crud.html" class="hover:text-white transition-colors">Manage Campaigns</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-3">Contact Info</h3>
+                    <ul class="space-y-2 text-green-100 dark:text-gray-400">
+                        <li>📧 info@shajarhope.org</li>
+                        <li>📞 +92 300 0000000</li>
+                        <li>📍 Lahore, Pakistan</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-green-600 dark:border-gray-700 mt-8 pt-6 text-center text-green-100 dark:text-gray-500 text-sm">
+                © 2026 Shajar Hope Alliance. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- SCRIPTS (loaded in dependency order) -->
+    <script src="./src/constants/themeConstants.js"></script>
+    <script src="./src/database/campaignData.js"></script>
+    <script src="./src/utils/stringUtils.js"></script>
+    <script src="./src/utils/filterUtils.js"></script>
+    <script src="./src/crud/crudOperations.js"></script>
+    <script src="./src/utils/themeUtils.js"></script>
+    <script src="./src/pages/home/home.js"></script>
+</body>
+</html>
